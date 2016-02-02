@@ -1,0 +1,34 @@
+Project Assignment-2 : Intermediate
+1. 
+  1.1 echo "Patel"
+  1.2 echo "Pizza Burger Franky" > myfavoritefood.md
+  1.3 echo " E-Learnig website for Javascript-For begginner to Professional" > dreamproject.md
+  1.4 echo "Pal Pal Dil Ke Paas by Kishor kumar" > music.md
+  1.5 echo "Red Green Blue" > colors.md
+
+2.  ls -S | head -n 1
+    ls -Sl > filesizes.txt
+
+3. mkdir backups
+   tar -cf backups/backup1.tar commandline-practice
+   
+4. vi sites.txt
+   echo -e "www.yahoo.com \n www.msn.com \n www.google.com" in site.txt
+   ./sites.txt
+
+5. curl -L http://yahoo.com > yahoo.html
+
+6. cd backups
+   mv backups1.tar $(date +"%d-%m-%y")
+
+7. wc -w dreamproject.md
+
+8. grep -c ".js" yahoo.html > javascript.html
+
+9. cat *.txt | wc -w
+
+10. rm backups/*.*
+    tar -cf backups/backup2.tar commandline-practice
+    find -name "*.txt" -exec rm -r {} \;
+    find -name "*.md" -exec rm -r {} \;
+    find -name "*.html" -exec rm -r {} \;
