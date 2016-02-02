@@ -1,0 +1,101 @@
+Project Assignment 3: Advanced
+
+1. vi mdextract
+if [ "$#" -eq 2 ]
+then
+   echo -n "Expanding "
+   echo -n " "
+   echo -n $1
+   echo -n " into "
+   echo  $2
+
+   if [ ! -d $2 ]
+     then
+     mkdir $2
+   fi
+   cd $2
+   tar -xvf ../$1
+   cd ..
+
+  echo "done"
+
+else
+   clear
+   echo "You must have to give two arguments"
+   echo "First argument is name of tar file to extract"
+   echo "Second argument is name of location where given tar file extracted"
+fi
+./mdextract path/to/archive.tar ./backup2
+
+2. vi mdtemplate
+if [ "$#" -eq 2 ]
+then
+   if [ ! -d $1 ]
+    then
+      mkdir $1
+    fi
+
+    htmlpage=index.html
+    if [ ! -f $1/$htmlpage ]
+     then
+       # echo $2
+       ./createhtmlpage "$2" > $1/index.html
+    fi
+
+  cd $1
+   dir1=css
+   if [ ! -d $dir1 ]
+    then
+      mkdir $dir1
+   fi
+
+   # cssfile=style.css
+   # if [ ! -f $dir1/$cssfile ]
+   # then
+     cat ../csstag.txt > $dir1/style.css
+   # fi
+
+   dir2=images
+   if [ ! -d $dir2 ]
+    then
+     mkdir $dir2
+   fi
+
+   dir3=js
+   if [ ! -d $dir3 ]
+    then
+     mkdir $dir3
+   fi
+
+   filejs=main.js
+   if [ ! -f $dir3/$filejs ]
+    then
+      touch $dir3/$filejs
+   fi
+  cd ..
+  echo "Done successfully!"
+else
+  echo "You must have to pass two arguments"
+  echo "First argument is Name of the directory where your template files will be created"
+  echo "Second argument is title, which will be used inside index.html"
+fi
+./mdtemplate mysite 'Template Site Title'
+
+3. vi web_bundler
+if [ "$#" -gt 2 ]
+then
+    if [ -e $2 ]
+     then
+        for i in "${@:2}"
+          do
+            # echo $i
+            cat $i >> $1
+          done
+      echo "Done successfully!"
+     fi
+else
+    echo "You must have to pass two arguments"
+    echo "First argument is name of output file"
+    echo "Second argument is find pattern which tell to script which files pattern to be bundle"
+fi
+./web_bundler bundle.js ./js/partials/*.js
