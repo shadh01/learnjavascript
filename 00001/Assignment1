@@ -1,0 +1,40 @@
+Project Assignment 1: Beginner
+
+1. cd ../..
+2. ls
+3. ls -l
+4. ls -a
+5. mkdir clean_code_examples
+6. touch mytextfile.txt
+7. cat 'socks to buy.txt'
+8. pwd
+9. id -nu or whoami
+10. ls ../..
+11. touch "list of best cat pictures.html"
+12. cd "/C/Users/Default User/My Documents"
+13. ping 8.8.8.8
+14. cd $home
+15. echo "My name is Patel"
+16. cat "tylers favorite songs.txt" "sarahs favorite songs.txt"
+17. help echo > "echo_options.txt" | cat echo_options.txt
+18. vi flag 
+    CNT=0
+    re='^-?[0-9]+$'
+    if ! [[ $1 =~ $re ]];
+    then
+ 	echo "error:Not a number. Give +ve number"
+    else
+	if [ "$1" -lt 1 ];
+	  then
+   		echo "Give +ve number"
+	else
+        	while [ $CNT -lt "$1" ];
+        	do
+        	ping 127.0.0.1
+        	let CNT+=1
+        	done
+	fi
+    fi
+    ./flag 2
+19. cat *.md
+20. rm yesterday_todo_list.md
